@@ -36,7 +36,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|image|null: false|
+|body|text||
 |image|string||
 |user_id|integer|foreign_key: true|
 |group_id|integer|foreign_key: true| 
