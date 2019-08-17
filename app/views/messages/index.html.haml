@@ -1,0 +1,50 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %title
+    %link{:href => "application.scss", :rel => "stylesheet"}/
+  %body
+    .wrapper
+      .chat-side
+        .side-header
+          .side-header__box
+            %p.side-header__box__user-name 名前
+            %ul.side-header__box__menu
+              %li.side-header__box__menu__new-group
+                %a{:href => "/groups/new"}
+                  %i.fa.fa-edit
+              %li.side-header__box__menu__edit-user
+                %a{:href => "/users/1313/edit"}
+                  %i.fa.fa-cog
+        .groups
+          .group1
+            %p.group1__group-name グループ名
+            %p メッセージ
+          .group2
+            %p.group2__group-name グループ名
+            %p メッセージ
+      .chat-main
+        .main-header
+          .main-header__left-box
+            %h2.main-header__left-box__current-group
+              グループ
+            %ul.main-header__left-box__member-list
+              Member：
+              %li.main-header__left-box__member-list__member hsbsts1988
+          %a{:href => "/groups/2849/edit"}
+            .main-header__edit-btn Edit
+        .messages
+          .message1
+            %p.massage__content1 名前日付内容
+          .message2
+            %p.massage__content2 名前日付内容
+        .form
+          %form.new.message
+            .input-box
+              %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+              %label.input-box__image{:for => "message_image"}
+                %i.fa.fa-image
+                %input#message_image.input-box__image__file{:name => "message[image]", :type => "file"}/
+            %input.submit-btn{:type => "submit", :value => "Send"}/
