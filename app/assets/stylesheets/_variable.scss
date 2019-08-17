@@ -17,13 +17,13 @@
   display: flex;
   align-items: center;
   padding: 0 20px;
-}
 
-.side-header__box {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  font-weight: bold;
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bold;
+ }
 }
 
 .side-header__box__user-name {
@@ -44,22 +44,16 @@
   margin-left: 0.3rem;
 }
 
-.chat-side .side-header__box__menu li {
-  margin-left: 0.3rem;
-}
-
 .chat-side .groups {
   height: calc(100vh - 100px);
   background-color: #2f3e51;
   padding: 20px 20px 0;
   overflow: scroll;
+ .group1, .group2 {
+    color: white;
+    margin-bottom: 40px;
+  }
 }
-
-.group1, .group2 {
-  color: white;
-  margin-bottom: 40px;
-}
-
 .chat-main {
   width: calc(100vw - 300px);
 }
@@ -104,14 +98,12 @@
   padding: 46px 40px;
   background-color: #fafafa;
   overflow: scroll;
-}
-
-.message1 {
-  padding-bottom: 40px;
-}
-
-.massage__content1 {
-  font-size: 16px;
+  .message1 {
+    padding-bottom: 40px;
+    .massage__content1 {
+      font-size: 16px;
+    }
+  }
 }
 
 .chat-main .form {
