@@ -1,37 +1,18 @@
 .wrapper
-  .chat-side
-    .side-header
-      .side-header__box
-        %p.side-header__box__user-name 名前
-        %ul.side-header__box__menu
-          %li.side-header__box__menu__new-group
-            = link_to "/groups/new" do
-              %i.fa.fa-edit
-          %li.side-header__box__menu__edit-user
-            = link_to "/users/1313/edit" do
-              %i.fa.fa-cog
-    .groups
-      .group1
-        %p.group1__group-name グループ名
-        %p メッセージ
-      .group2
-        %p.group2__group-name グループ名
-        %p メッセージ
+  = render 'shared/side_bar'
   .chat-main
     .main-header
       .main-header__left-box
         %h2.main-header__left-box__current-group
-          グループ
-        %ul.main-header__left-box__member-list
-          Member：
-          %li.main-header__left-box__member-list__member hsbsts1988
-      = link_to "/groups/2849/edit" do
-        .main-header__edit-btn Edit
+          = @group.name
+        .main-header__left-box__member-list
+          Member :
+          - @members.each do |member|
+            = member.name
+      .main-header__edit-btn    
+        = link_to 'Edit',edit_group_path(params[:group_id]),class: "editlink"
     .messages
-      .message1
-        %p.massage__content1 名前日付内容
-      .message2
-        %p.massage__content2 名前日付内容
+      = render @messages
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
