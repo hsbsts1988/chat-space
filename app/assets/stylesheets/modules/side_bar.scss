@@ -32,9 +32,10 @@
     .group {
       box-sizing: border-box;
       padding: 20px 0 40px;
+      text-decoration: none;
       &__name {
         color: $white;
-        font-size: $side_group_name;
+        font-size: $side_group_name;    
       }
       &__message {
         color: $white;
