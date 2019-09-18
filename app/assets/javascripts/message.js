@@ -58,7 +58,7 @@ $(document).on('turbolinks:load', function(){
         url: "api/messages", //サーバを指定。今回はapi/message_controllerに処理を飛ばす
         type: 'get', //メソッドを指定
         dataType: 'json', //データはjson形式
-        data: {last_id: last_message_id} //飛ばすデータは先ほど取得したlast_message_id。またparamsとして渡すためlast_idとする。
+        data: {id: last_message_id} //飛ばすデータは先ほど取得したlast_message_id。またparamsとして渡すためlast_idとする。
       })
       .done(function (messages) { //通信成功したら、controllerから受け取ったデータ（messages)を引数にとって以下のことを行う
         var insertHTML = '';//追加するHTMLの入れ物を作る
